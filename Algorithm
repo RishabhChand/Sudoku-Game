@@ -1,0 +1,58 @@
+#####     Algorithm for Sudoko Solver   #####
+
+
+1.  Define a method called isPresentInCol(), this will take call and num
+
+2.  for each row r in the grid, do
+
+3.  if grid[r, col] = num, then return true
+
+4.  return false otherwise
+
+5.  Define a method called isPresentInRow(), this will take row and num
+
+6.  for each column c in the grid, do
+
+7.  if grid[row, c] = num, then return true
+
+8.  return false otherwise
+
+9.  Define a method called isPresentInBox() this will take boxStartRow, boxStartCol, num
+
+10.  for each row r in boxStartRow to next 3 rows, do
+
+11.  for each col r in boxStartCol to next 3 columns, do
+
+12.  if grid[r, c] = num, then return true
+
+13.  return false otherwise
+
+14.  Define a method called findEmptyPlace(), this will take row and col
+
+15.  for each row r in the grid, do
+
+16.  for each column c in the grid, do
+
+17.  if grid[r, c] = 0, then return true
+
+18.  return false
+
+19.  Define a method called isValidPlace(), this will take row, col, num
+
+20.  if isPresentInRow(row, num) and isPresentInCol(col, num) and isPresntInBox(row – row mod 3, col – col mod 3, num) all are false, then return true
+
+21.  Define a method called solveSudoku(), this will take the grid
+
+22.  if no place in the grid is empty, then return true
+
+23.  for number 1 to 9, do
+
+24.  if isValidPlace(row, col, number), then
+
+25.  grid[row, col] := number
+
+26.  if solveSudoku = true, then return true
+
+27.  grid[row, col] := 0
+
+28.  return false
